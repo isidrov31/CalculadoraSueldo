@@ -32,10 +32,10 @@
 <!-- Titulo -->
 
                 <div class="row my-2">
-                    <div class="col" style="background-color: yellow;">Variables</div>
-                    <div class="col" style="background-color: red;">Lunes a Viernes</div>
-                    <div class="col" style="background-color: green;">Sabados</div>
-                    <div class="col" style="background-color: blue;">Domingos y Feriados</div>
+                    <div class="col" style="background-color: rgb(220, 220, 104);">Variables</div>
+                    <div class="col" style="background-color: rgb(247, 109, 109);">Lunes a Viernes</div>
+                    <div class="col" style="background-color: rgb(48, 111, 48);">Sabados</div>
+                    <div class="col" style="background-color: rgb(84, 84, 172);">Domingos y Feriados</div>
                 </div>
 
 <!-- Tipos de horas -->
@@ -87,6 +87,7 @@
                 <div class="row justify-content-center">
                     <div class="col-3">
                         <button type="button" class="btn btn-primary btn-sm reset">Resetear</button>
+                        <button type="button" class="btn btn-primary btn-sm calcularPesoAhorro">Calcular Peso Ahorro</button>
                     </div>
                     <div class="col-3">
                         <button type="button" class="btn btn-primary btn-sm calcular1">Calcular</button>
@@ -102,16 +103,29 @@
 <!-- Resultados -->
 
                     <div class="row my-2">
-                        <div class="col h-200" style="height: 100px"></div>
-                        <div class="col h-200" style="background-color: red;" >
-                            <h4>Resultado</h4>
-                            <span class="resultado1"></span>
+                        <div class="col h-200" style="background-color: rgb(220, 220, 104); height: 100px">
+                            <h4>Calculo peso ahorro</h4>
+                            <div class="pesoAhorro">
+                                <div class="result">
+                                    <p>Horas Peso ahorro:</p>
+                                    <span class="horasPesoAhorro">0</span>
+                                </div>
+                                <div class="result">
+                                    <p>Resultado Peso ahorro</p>
+                                    <span class="resultadoPesoAhorro"></span>
+                                </div>
+                                
+                            </div>
                         </div>
-                        <div class="col h-200" style="background-color: green;">
+                        <div class="col h-200" style="background-color: rgb(247, 109, 109);" >
+                            <h4>Resultado</h4>
+                            <span class="resultado1"></span>    
+                        </div>
+                        <div class="col h-200" style="background-color: rgb(48, 111, 48);">
                             <h4>Resultado</h4>
                             <span class="resultado2"></span>
                         </div>
-                        <div class="col h-200" style="background-color: blue;">
+                        <div class="col h-200" style="background-color: rgb(84, 84, 172);">
                             <h4>Resultado</h4>
                             <span class="resultado3"></span>
                         </div>
@@ -120,23 +134,52 @@
 <!-- Total -->
 
                     <div class="row my-2">
-                        <div class="col" style="height: 50px"></div>
-                        <div class="col"></div>
-                        <div class="col" style="background-color: cyan">
+                        <div class="col">
+                            
+                            <div id="calculadora">
+
+                                <div class="pantalla">0</div>
+                                <button id="c" class="btns-calc">c</button>
+                                <button id="borrar" class="btns-calc">←</button>
+                                <button class="btns-calc">/</button>
+                                <button class="btns-calc">*</button>
+                                <button class="btns-calc">7</button>
+                                <button class="btns-calc">8</button>
+                                <button class="btns-calc">9</button>
+                                <button class="btns-calc">-</button>
+                                <button class="btns-calc">4</button>
+                                <button class="btns-calc">5</button>
+                                <button class="btns-calc">6</button>
+                                <button class="btns-calc">+</button>
+                                <button class="btns-calc">1</button>
+                                <button class="btns-calc">2</button>
+                                <button class="btns-calc">3</button>
+                                <button id="igual" class="btns-calc">=</button>
+                                <button id="cero" class="btns-calc">0</button>
+                                <button class="btns-calc">.</button>
+
+                            </div>
+
+                        </div>    
+                        <div class="col">
+                            <h4>Total con Peso ahorro</h4>
+                            <span class="sumaTotalConPesoAhorro"></span>
+                        </div>
+                        <div class="col">
                             <h4>Total</h4>
                             <span class="sumaTotal"></span>
                         </div>
-                        <div class="col"></div>
+                        <div class="col">
+                            <button type="button" class="btn btn-primary btn-sm SumarPesoAhorro">Sumar Peso Ahorro</button>
+                        </div>
                     </div>
 
                     <div class="row my-2">
                         <div class="col" style="height: 50px"></div>
                         <div class="col"></div>
-                        <div class="col" style="background-color: cyan">
-                            <h4>Total con Peso ahorro</h4>
-                            <span class="sumaTotalConPesoAhorro"></span>
-                        </div>
                         <div class="col"></div>
+                        <div class="col">
+                        </div>
                     </div>
 
             </div>          

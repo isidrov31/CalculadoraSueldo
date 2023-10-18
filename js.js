@@ -14,6 +14,10 @@ resultado3 = document.querySelector(".resultado3")
 calcular3 = document.querySelector(".calcular3")
 sumaTotal = document.querySelector(".sumaTotal")
 sumaTotalConPesoAhorro = document.querySelector(".sumaTotalConPesoAhorro")
+horasPesoAhorro = document.querySelector(".horasPesoAhorro")
+calcularPesoAhorro = document.querySelector(".calcularPesoAhorro")
+divresultadoPesoAhorro = document.querySelector(".resultadoPesoAhorro")
+SumarPesoAhorro = document.querySelector(".SumarPesoAhorro")
 
 resetValores = () => {
     valorHora.value = "0"
@@ -26,7 +30,20 @@ resetValores = () => {
     resultado2.innerHTML = ""
     horaDomingoFeriadoAl100.value = "0"
     resultado3.innerHTML = ""
+    sumaTotal.innerHTML = ""
+    sumaTotalConPesoAhorro.innerHTML = ""
+    horasPesoAhorro.innerHTML = ""
+    divresultadoPesoAhorro.innerHTML = ""
 
+}
+
+const obtenerResultado = (valorHora, horasNormales, horasAl50, horasAl100) => {
+    const result = valorHora * horasNormales + ((valorHora * horasAl50) *1.5) + ((valorHora * horasAl100)*2)
+    return result;
+}
+
+const actualizarResultado = (resultadoElement, valor) => {
+    resultadoElement.innerHTML = valor;
 }
 
 sumaTotal1 = () => {
@@ -40,10 +57,32 @@ sumaTotal1 = () => {
     sumaTotal.innerHTML = sumaTotal2
 }
 
+
+ContarHorasPesoAhorro = () => {
+
+    const valorHoraNormalLaV = parseFloat(horaNormalLaV.value);
+    const valorHoraAl50LaV = parseFloat(horaAl50LaV.value);
+    const valorHoraSabadoAl50 = parseFloat(horaSabadoAl50.value);
+    const valorHoraSabadoAl100 = parseFloat(horaSabadoAl100.value);
+    const valorHoraDomingoFeriadoAl100 = parseFloat(horaDomingoFeriadoAl100.value);
+
+    sumaHorasPesoAhorro = valorHoraNormalLaV + valorHoraAl50LaV + valorHoraSabadoAl50 + valorHoraSabadoAl100 +  valorHoraDomingoFeriadoAl100
+    horasPesoAhorro.innerHTML = sumaHorasPesoAhorro
+}
+
+calcularResultadoPesoAhorro = () => {
+    const horaPesoAhorroConvertido = parseFloat(horasPesoAhorro.innerHTML);
+    const valorPesoAhorroConvertido = parseFloat(valorPesoAhorro.value);
+
+    resultadoPesoAhorro = valorPesoAhorroConvertido * horaPesoAhorroConvertido
+    divresultadoPesoAhorro.innerHTML = resultadoPesoAhorro
+
+}   
+
 sumaTotalConPesoAhorro1 = () => {
 
-    const sumaTotalconvertido = parseFloat(sumaTotal.innerHTML) || 0;
-    const sumaTotalConPesoAhorroConvertido = parseFloat(sumaTotalConPesoAhorro.innerHTML) || 0;
+    const sumaTotalconvertido = parseFloat(sumaTotal.innerHTML);
+    const sumaTotalConPesoAhorroConvertido = parseFloat(divresultadoPesoAhorro.innerHTML);
 
 
     sumaTotalConPesoAhorro2 = sumaTotalconvertido + sumaTotalConPesoAhorroConvertido
@@ -51,38 +90,71 @@ sumaTotalConPesoAhorro1 = () => {
     sumaTotalConPesoAhorro.innerHTML = sumaTotalConPesoAhorro2
 }
 
+const obtenerYActualizarResultados = () => {
+    const result1 = obtenerResultado (valorHora.value,  horaNormalLaV.value, horaAl50LaV.value, 0)
+    actualizarResultado (resultado1,result1)
 
-multiplicacion1 = () => {
-    resultadosuma1 = (valorHora.value * horaNormalLaV.value) + ((valorHora.value * horaAl50LaV.value)*0.5)
-    resultado1.innerHTML = resultadosuma1
-    
-    sumaTotal1();
-    sumaTotalConPesoAhorro1();
+    const result2 = obtenerResultado (valorHora.value, 0, horaSabadoAl50.value, horaSabadoAl100.value)
+    actualizarResultado (resultado2,result2)
 
-}
+    const result3 = obtenerResultado (valorHora.value, 0, 0, horaDomingoFeriadoAl100.value)
+    actualizarResultado (resultado3,result3)
 
-multiplicacion2 = () => {
-    resultadosuma2 = (valorHora.value * horaSabadoAl50.value)*1.5 + ((valorHora.value * horaSabadoAl100.value)*2)
-    resultado2.innerHTML = resultadosuma2
 
-    sumaTotal1();
-    sumaTotalConPesoAhorro1();
+    sumaTotal1()    
+    ContarHorasPesoAhorro()   
 
-}
-
-multiplicacion3 = () => { 
-    resultadosuma3 = (valorHora.value * horaDomingoFeriadoAl100.value) *2
-    resultado3.innerHTML = resultadosuma3
-
-    sumaTotal1();
-    sumaTotalConPesoAhorro1();
 
 }
 
 reset.addEventListener("click", resetValores);
-calcular1.addEventListener("click", multiplicacion1)
-calcular2.addEventListener("click", multiplicacion2)
-calcular3.addEventListener("click", multiplicacion3)
+calcular1.addEventListener("click", obtenerYActualizarResultados)
+calcular2.addEventListener("click", obtenerYActualizarResultados)
+calcular3.addEventListener("click", obtenerYActualizarResultados)
+calcularPesoAhorro.addEventListener("click", calcularResultadoPesoAhorro)
+SumarPesoAhorro.addEventListener("click", sumaTotalConPesoAhorro1)
 
-sumaTotal1()
-sumaTotalConPesoAhorro1()
+
+
+// Calcuadora
+
+const pantalla = document.querySelector(".pantalla")
+const botones = document.querySelectorAll(".btns-calc")
+
+botones.forEach(boton => {
+    boton.addEventListener("click", () => {
+
+        if (boton.id === "c") {
+            pantalla.textContent = "0"
+            return;
+        }
+
+        if(boton.id === "borrar") {
+            if (pantalla.textContent.length === 1 || pantalla.textContent === "ERROR"){
+                pantalla.textContent = "0"
+            } else {
+                pantalla.textContent = pantalla.textContent.slice(0,-1)
+            }
+            return;
+        }
+
+        if (boton.id === "igual") {
+            try{
+                pantalla.textContent = eval(pantalla.textContent);
+            } catch {
+                pantalla.textContent = "ERROR"
+            }
+            return
+        }
+
+
+        botonApretado = boton.textContent
+
+        if (pantalla.textContent === "0" || pantalla.textContent === "ERROR") {
+            pantalla.textContent = botonApretado
+        } else pantalla.textContent += botonApretado
+
+        })
+})
+
+

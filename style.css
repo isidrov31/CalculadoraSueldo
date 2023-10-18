@@ -2,3 +2,51 @@ body{
     background-color: rgb(220, 205, 205);
     font-size: 25px;
 }
+
+.pesoAhorro {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.result{
+    display: flex;
+    gap: 15px;
+}
+
+#calculadora {
+    height: 200px;
+    width: 250px;
+    background-color: brown;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 5px;
+    gap: 2px;
+    border-radius: 5px;
+}
+
+.pantalla {
+    height: 90%;
+    grid-column: 1 / 5;
+    background-color: white;
+    text-align: end;
+}
+
+.btns-calc{
+    font-size: 15px;
+    background-color: brown ;
+    border-radius: 10px;
+    color: white;
+}
+
+#cero {
+    grid-column: span 2;
+    background-color: aquamarine;
+    color: black;
+}
+
+#igual {
+    grid-row: span 2;
+    background-color: aquamarine;
+    color: black;
+}

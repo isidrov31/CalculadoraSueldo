@@ -24,26 +24,20 @@
 
             <div class="container">
 
-                <div class="row">
+                <div class="row my-2">
 
                     <div class="col-md-6">
 
                         <div class="title" style="background-color: rgb(220, 220, 104);">
                             Variables
                         </div>
-                        <div>
+                        <div class="hoursValue">
                             <h4>Valor hora</h4>
                             <input type="number" value="0" class="form-control form-control-sm valorHora">
                         </div>
-                        <div>
+                        <div class="hoursValue">
                             <h4>Valor Hora Peso ahorro</h4>
-                        </div>
-                        <div >
                             <input type="number" value="0" class="form-control form-control-sm valorPesoAhorro">
-                        </div>
-                        <div>
-                            <button type="button" class="btn btn-primary btn-sm reset">Resetear</button>
-                            <button type="button" class="btn btn-primary btn-sm calcularPesoAhorro">Calcular Peso Ahorro</button>
                         </div>
 
                     </div>
@@ -53,15 +47,15 @@
                         <div class="title" style="background-color: rgb(247, 109, 109);">
                             Lunes a Viernes
                         </div>
-                        <div>Hora normal</div>
-                        <div>
+                        <div class="hoursValue">
+                            <h4>Hora normal</h4>
                             <input type="number" value="0" class="form-control form-control-sm horaNormalLaV">
                         </div>
-                        <div>Hora al 50%</div>
-                        <div>
+                        <div class="hoursValue">
+                            <h4>Hora al 50%</h4>
                             <input type="number"  value="0" class="form-control form-control-sm horaSabadoAl50">
                         </div>
-                        <div>
+                        <div class="btn-calcular">
                             <button type="button" class="btn btn-primary btn-sm calcular1">Calcular</button>
                         </div>
 
@@ -69,26 +63,22 @@
 
                 </div>
 
-                <div class="row">
+                <div class="row my-2">
 
                     <div class="col-md-6">
 
                         <div class="title" style="background-color: rgb(48, 111, 48);">
                             Sabados
                         </div>
-                        <div>
-                            Hora al 50%
+                        <div class="hoursValue">
+                            <h4>Hora al 50%</h4>
+                            <input type="number" value="0" class="form-control form-control-sm horaSabadoAl50">
                         </div>
-                        <div>
-                            <input type="number" value="0" class="form-control form-control-sm horaAl50LaV">
+                        <div class="hoursValue">
+                            <h4>Hora al 100%</h4>
+                            <input type="number"  value="0"  class="form-control form-control-sm horaSabadoAl100" >
                         </div>
-                        <div>
-                            Hora al 100%
-                        </div>
-                        <div>
-                            <input type="number"  value="0"  class="form-control form-control-sm horaDomingoFeriadoAl100" >
-                        </div>
-                        <div class="col-3">
+                        <div class="btn-calcular">
                             <button type="button" class="btn btn-primary btn-sm calcular2">Calcular</button>
                         </div>
 
@@ -99,12 +89,12 @@
                         <div class="title" style="background-color: rgb(84, 84, 172);">
                             Domingos y Feriados
                         </div>
-                        <div>Hora al 100%</div>
-                        <div>
-                            <input type="number"  value="0" class="form-control form-control-sm horaSabadoAl100">
+                        <div class="hoursValue">
+                            <h4>Hora al 100%</h4>
+                            <input type="number"  value="0" class="form-control form-control-sm horaDomingoFeriadoAl100">
                         </div>
                         <div></div>
-                        <div>
+                        <div class="btn-calcular">
                             <button type="button" class="btn btn-primary btn-sm calcular3">Calcular</button>
                         </div>
 
@@ -112,7 +102,7 @@
 
                 </div>
 
-                <div class="row">
+                <div class="row my-2">
 
                     <div class="col-md-6">
 
@@ -158,7 +148,7 @@
 
                 </div>
 
-                <div class="row">
+                <div class="row my-2">
 
                     <div class="col-md-6">
 
@@ -201,6 +191,8 @@
                             <button class="btns-calc">.</button>
 
                         </div>
+                        <button type="button" class="btn btn-primary btn-sm calcularPesoAhorro">Calcular Peso Ahorro</button>
+                        <button type="button" class="btn btn-primary btn-sm reset">Resetear</button>
 
                     </div>
 

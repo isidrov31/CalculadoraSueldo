@@ -166,3 +166,15 @@ body{
     height: 100%;
     width: 100%;
 }
+
+.totales{
+    display: flex;
+}
+
+.totales h4{
+    width: 50%;
+}
+
+.totales span{
+    width: 50%;
+}

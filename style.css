@@ -173,10 +173,12 @@ body{
 
 .totales h4{
     width: 50%;
+    color: black
 }
 
 .totales span{
     width: 50%;
+    color: black;
 }
 
 .row{

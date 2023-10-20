@@ -1,17 +1,6 @@
 body{
-    background-color: rgb(220, 205, 205);
+    background-color: #dcf1d9;
     font-size: 1rem;
-}
-
-.pesoAhorro {
-    font-size: 16px;
-    display: flex;
-    flex-direction: column;
-}
-
-.result{
-    display: flex;
-    gap: 15px;
 }
 
 #calculadora {
@@ -56,7 +45,6 @@ body{
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: rgb(207, 244, 193);
 }
 
 .jumbotron h1 {
@@ -69,12 +57,12 @@ body{
 
 .title {
     display: flex;
-    height: 10%;
+    min-height: 10%;
 }
 
 .title p {
-    max-height: 100%;
-    font-size: 1,25rem;
+    height: 100%;
+    font-size: 1.2rem;
     margin: 0
 }
 
@@ -88,6 +76,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    min-height: 300px;
 }
 
 .hoursValue{
@@ -96,6 +85,14 @@ body{
     align-items: center;
     justify-content: center;
     height: 30%;
+    min-height: 30%;
+}
+
+.resultados {
+    display: flex;
+    height: 30%;
+    min-height: 30%;
+    width: 100%;
 }
 
 .valorHora {
@@ -143,5 +140,13 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 100%;
+}
+
+.calcular1{
+    width: 100%;
+}
+
+.result{
+    display: flex;
+    gap: 5px;
 }

@@ -24,6 +24,31 @@
 
             <div class="container">
 
+                <div id="calculadora">
+
+                    <div class="pantalla">0</div>
+                    <button id="c" class="btns-calc">c</button>
+                    <button id="borrar" class="btns-calc">←</button>
+                    <button class="btns-calc">/</button>
+                    <button class="btns-calc">*</button>
+                    <button class="btns-calc">7</button>
+                    <button class="btns-calc">8</button>
+                    <button class="btns-calc">9</button>
+                    <button class="btns-calc">-</button>
+                    <button class="btns-calc">4</button>
+                    <button class="btns-calc">5</button>
+                    <button class="btns-calc">6</button>
+                    <button class="btns-calc">+</button>
+                    <button class="btns-calc">1</button>
+                    <button class="btns-calc">2</button>
+                    <button class="btns-calc">3</button>
+                    <button id="igual" class="btns-calc">=</button>
+                    <button id="cero" class="btns-calc">0</button>
+                    <button class="btns-calc">.</button>
+
+                </div>
+
+
                 <div class="row my-2">
 
                     <div class="col-md-6" style="background-color: #8fbf9f; border-radius: 10px;">
@@ -55,7 +80,7 @@
                         </div>
                         <div class="hoursValue">
                             <h4>Hora al 50%</h4>
-                            <input type="number"  value="0" class="form-control form-control-sm horaSabadoAl50">
+                            <input type="number"  value="0" class="form-control form-control-sm horaAl50LaV">
                         </div>
                         <div class="hoursValue">
                             <div class="btn-calcular">
@@ -135,23 +160,23 @@
 
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-6" style="background-color: #218f75; border-radius: 10px;">
 
                         <div class="resultados">
-                            <div class="title" style="background-color: rgb(247, 109, 109);" >
-                                <h4>Resultado</h4>
+                            <div class="title-result">
+                                <h4>Resultado Lunes a Viernes</h4>
                             <span class="resultado1"></span>    
                             </div>
                         </div>
                         <div class="resultados">
-                            <div class="title" style="background-color: rgb(48, 111, 48);">
-                                <h4>Resultado</h4>
+                            <div class="title-result">
+                                <h4>Resultado Sabados</h4>
                                 <span class="resultado2"></span>
                             </div>
                         </div>
                         <div class="resultados">
-                            <div class="title" style="background-color: rgb(84, 84, 172);">
-                                <h4>Resultado</h4>
+                            <div class="title-result">
+                                <h4>Resultado Domingos y Feriados</h4>
                                 <span class="resultado3"></span>
                             </div>
                         </div>
@@ -165,52 +190,26 @@
                     <div class="col-md-6">
 
                         <div>
-                            <h4>Total con Peso ahorro</h4>
-                            <span class="sumaTotalConPesoAhorro"></span>
-                        </div>
+                            <div>
+                                <h4>Total</h4>
+                                <span class="sumaTotal"></span>                            
+                            </div>
+                            <div>
+                                <h4>Total con Peso ahorro</h4>
+                                <span class="sumaTotalConPesoAhorro"></span>
+                            </div>
                         <div>
-                            <h4>Total</h4>
-                            <span class="sumaTotal"></span>
-                        </div>
-                        <div>
+
+
                             <button type="button" class="btn btn-primary btn-sm SumarPesoAhorro">Sumar Peso Ahorro</button>
-                        </div>
-
+                            <button type="button" class="btn btn-primary btn-sm calcularPesoAhorro">Calcular Peso Ahorro</button>
+                            <button type="button" class="btn btn-primary btn-sm reset">Resetear</button>
+                            
                     </div>
 
-                    <div class="col-md-6">
-
-                        <div id="calculadora">
-
-                            <div class="pantalla">0</div>
-                            <button id="c" class="btns-calc">c</button>
-                            <button id="borrar" class="btns-calc">←</button>
-                            <button class="btns-calc">/</button>
-                            <button class="btns-calc">*</button>
-                            <button class="btns-calc">7</button>
-                            <button class="btns-calc">8</button>
-                            <button class="btns-calc">9</button>
-                            <button class="btns-calc">-</button>
-                            <button class="btns-calc">4</button>
-                            <button class="btns-calc">5</button>
-                            <button class="btns-calc">6</button>
-                            <button class="btns-calc">+</button>
-                            <button class="btns-calc">1</button>
-                            <button class="btns-calc">2</button>
-                            <button class="btns-calc">3</button>
-                            <button id="igual" class="btns-calc">=</button>
-                            <button id="cero" class="btns-calc">0</button>
-                            <button class="btns-calc">.</button>
-
-                        </div>
-                        <button type="button" class="btn btn-primary btn-sm calcularPesoAhorro">Calcular Peso Ahorro</button>
-                        <button type="button" class="btn btn-primary btn-sm reset">Resetear</button>
-
-                    </div>
+                    <div class="col-md-6"></div>
 
                 </div>
-
-            </div>
 
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -222,6 +221,7 @@
     </script>
 
     <script src="js.js"></script>
+
 </body>
 
 </html>

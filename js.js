@@ -1,23 +1,32 @@
-valorHora = document.querySelector(".valorHora")
-valorPesoAhorro = document.querySelector(".valorPesoAhorro")
+
+
 reset = document.querySelector(".reset")
 horaNormalLaV = document.querySelector(".horaNormalLaV")
 horaAl50LaV = document.querySelector(".horaAl50LaV")
-calcular1 = document.querySelector(".calcular1")
+
 resultado1 = document.querySelector(".resultado1")
 horaSabadoAl50 = document.querySelector(".horaSabadoAl50")
 horaSabadoAl100 = document.querySelector(".horaSabadoAl100")
 resultado2 = document.querySelector(".resultado2")
-calcular2 = document.querySelector(".calcular2")
+
 horaDomingoFeriadoAl100 = document.querySelector(".horaDomingoFeriadoAl100")
 resultado3 = document.querySelector(".resultado3")
-calcular3 = document.querySelector(".calcular3")
+
 sumaTotal = document.querySelector(".sumaTotal")
 sumaTotalConPesoAhorro = document.querySelector(".sumaTotalConPesoAhorro")
 horasPesoAhorro = document.querySelector(".horasPesoAhorro")
 calcularPesoAhorro = document.querySelector(".calcularPesoAhorro")
 divresultadoPesoAhorro = document.querySelector(".resultadoPesoAhorro")
 SumarPesoAhorro = document.querySelector(".SumarPesoAhorro")
+
+// valor horas y peso ahorro
+valorHora = document.querySelector(".valorHora")
+valorPesoAhorro = document.querySelector(".valorPesoAhorro")
+
+// botones
+calcular1 = document.querySelector(".calcular1")
+calcular2 = document.querySelector(".calcular2")
+calcular3 = document.querySelector(".calcular3")
 
 resetValores = () => {
     valorHora.value = "0"
